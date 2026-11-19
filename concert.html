@@ -172,6 +172,7 @@ nav a{
 <h1>JEFF RESTA</h1>
 
 <nav>
+
 <a href="index.html">Home</a>
 <span class="separator">•</span>
 
@@ -188,6 +189,7 @@ nav a{
 <span class="separator">•</span>
 
 <a href="about.html">About</a>
+
 </nav>
 
 </header>
@@ -203,15 +205,8 @@ nav a{
 </div>
 
 <div class="bottom-text">
-
-<h2>
-Concert, Ballet &amp; Performing Arts Photography
-</h2>
-
-<p>
-Promoting Music &amp; The Performing Arts through Photography &amp; Media.
-</p>
-
+<h2>Concert, Ballet &amp; Performing Arts Photography</h2>
+<p>Promoting Music &amp; The Performing Arts through Photography &amp; Media.</p>
 </div>
 
 <div class="footer">
@@ -254,8 +249,10 @@ const images = [
 "images/concert/IMG_9930.jpg",
 "images/concert/Jeff_Beck_IMG_4610.jpg",
 "images/concert/Linkin_Park_Chester_Bennington_IMG_0134.jpg",
+"images/concert/Papa_Roach_IMG_0486.jpg",
 "images/concert/Papa_Roach_IMG_5622.jpg",
 "images/concert/Paramore_IMG_1728.jpg",
+"images/concert/PoM_IMG_0150.jpg",
 "images/concert/Rob_Zombie_IMG_4884.jpg",
 "images/concert/Rob_Zombie_IMG_5561.jpg",
 "images/concert/Roger_Waters_IMG_6152.jpg",
@@ -286,7 +283,6 @@ const randomizedImages = shuffle([...images]);
 randomizedImages.forEach(src => {
 
 const img = document.createElement('img');
-
 img.src = src;
 img.alt = '';
 

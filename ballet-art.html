@@ -259,59 +259,43 @@ const images = [
 
 ];
 
-function shuffle(array){
+images.forEach(src => {
 
-for(let i = array.length - 1; i > 0; i--){
+    const img = document.createElement('img');
 
-const j = Math.floor(Math.random() * (i + 1));
+    img.src = src;
+    img.alt = '';
+    img.draggable = false;
 
-[array[i], array[j]] = [array[j], array[i]];
-
-}
-
-return array;
-
-}
-
-const randomizedImages = shuffle([...images]);
-
-randomizedImages.forEach(src => {
-
-const img = document.createElement('img');
-
-img.src = src;
-img.alt = '';
-img.draggable = false;
-
-gallery.appendChild(img);
+    gallery.appendChild(img);
 
 });
 
 function scrollGallery(amount){
 
-gallery.scrollBy({
-left: amount,
-behavior: 'smooth'
-});
+    gallery.scrollBy({
+        left: amount,
+        behavior: 'smooth'
+    });
 
 }
 
 gallery.addEventListener('wheel', function(e){
 
-e.preventDefault();
-gallery.scrollLeft += e.deltaY;
+    e.preventDefault();
+    gallery.scrollLeft += e.deltaY;
 
 },{ passive:false });
 
 document.addEventListener('keydown', function(e){
 
-if(e.key === 'ArrowRight'){
-scrollGallery(900);
-}
+    if(e.key === 'ArrowRight'){
+        scrollGallery(900);
+    }
 
-if(e.key === 'ArrowLeft'){
-scrollGallery(-900);
-}
+    if(e.key === 'ArrowLeft'){
+        scrollGallery(-900);
+    }
 
 });
 

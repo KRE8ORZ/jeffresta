@@ -1,6 +1,21 @@
-https://www.jeffresta.com/
-https://www.jeffresta.com/about.html
-https://www.jeffresta.com/concert.html
-https://www.jeffresta.com/ballet.html
-https://www.jeffresta.com/performing-arts.html
-https://www.jeffresta.com/ballet-art.html
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://www.jeffresta.com/</loc>
+  </url>
+  <url>
+    <loc>https://www.jeffresta.com/about.html</loc>
+  </url>
+  <url>
+    <loc>https://www.jeffresta.com/concert.html</loc>
+  </url>
+  <url>
+    <loc>https://www.jeffresta.com/ballet.html</loc>
+  </url>
+  <url>
+    <loc>https://www.jeffresta.com/performing-arts.html</loc>
+  </url>
+  <url>
+    <loc>https://www.jeffresta.com/ballet-art.html</loc>
+  </url>
+</urlset>

@@ -13,6 +13,8 @@ body{
     background:#ffffff;
     color:#111;
     font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    user-select:none;
+    -webkit-user-select:none;
 }
 
 header{
@@ -72,6 +74,7 @@ nav a:hover{
     width:auto;
     display:block;
     flex-shrink:0;
+    -webkit-user-drag:none;
 }
 
 .arrow{
@@ -169,7 +172,6 @@ nav a{
 <h1>JEFF RESTA</h1>
 
 <nav>
-
 <a href="index.html">Home</a>
 <span class="separator">•</span>
 
@@ -186,37 +188,23 @@ nav a{
 <span class="separator">•</span>
 
 <a href="about.html">About</a>
-
 </nav>
 
 </header>
 
 <div class="gallery-wrapper">
 
-<button class="arrow arrow-left" onclick="scrollGallery(-900)">
-‹
-</button>
+<button class="arrow arrow-left" onclick="scrollGallery(-900)">‹</button>
 
-<div class="gallery" id="gallery">
+<div class="gallery" id="gallery"></div>
 
-</div>
-
-<button class="arrow arrow-right" onclick="scrollGallery(900)">
-›
-</button>
+<button class="arrow arrow-right" onclick="scrollGallery(900)">›</button>
 
 </div>
 
 <div class="bottom-text">
-
-<h2>
-Concert, Ballet &amp; Performing Arts Photography
-</h2>
-
-<p>
-Promoting Music &amp; The Performing Arts through Photography &amp; Media.
-</p>
-
+<h2>Concert, Ballet &amp; Performing Arts Photography</h2>
+<p>Promoting Music &amp; The Performing Arts through Photography &amp; Media.</p>
 </div>
 
 <div class="footer">
@@ -225,10 +213,20 @@ Promoting Music &amp; The Performing Arts through Photography &amp; Media.
 
 <script>
 
+document.addEventListener('contextmenu', function(e){
+    e.preventDefault();
+});
+
+document.addEventListener('dragstart', function(e){
+    e.preventDefault();
+});
+
 const gallery = document.getElementById('gallery');
 
 const images = [
 
+"images/ballet-art/IMG_0611_BA_NFT.jpg",
+"images/ballet-art/IMG_0623_BAB_NFT.jpg",
 "images/ballet-art/IMG_3022_Ballet_Art.jpg"
 
 ];
@@ -254,7 +252,7 @@ randomizedImages.forEach(src => {
 const img = document.createElement('img');
 
 img.src = src;
-img.alt = "";
+img.alt = '';
 
 gallery.appendChild(img);
 
@@ -272,7 +270,6 @@ behavior: 'smooth'
 gallery.addEventListener('wheel', function(e){
 
 e.preventDefault();
-
 gallery.scrollLeft += e.deltaY;
 
 });

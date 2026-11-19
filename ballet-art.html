@@ -75,6 +75,7 @@ nav a:hover{
     display:block;
     flex-shrink:0;
     -webkit-user-drag:none;
+    user-select:none;
 }
 
 .arrow{
@@ -221,13 +222,40 @@ document.addEventListener('dragstart', function(e){
     e.preventDefault();
 });
 
+document.addEventListener('selectstart', function(e){
+    e.preventDefault();
+});
+
+document.addEventListener('keydown', function(e){
+
+    const key = e.key.toLowerCase();
+
+    if(
+        (e.metaKey && key === 's') ||
+        (e.ctrlKey && key === 's')
+    ){
+        e.preventDefault();
+    }
+
+    if(
+        key === 'f12' ||
+        (e.ctrlKey && e.shiftKey && key === 'i') ||
+        (e.ctrlKey && e.shiftKey && key === 'j') ||
+        (e.ctrlKey && e.shiftKey && key === 'c') ||
+        (e.metaKey && e.altKey && key === 'i')
+    ){
+        e.preventDefault();
+    }
+
+});
+
 const gallery = document.getElementById('gallery');
 
 const images = [
 
-"images/ballet-art/IMG_0611_BA_NFT.jpg",
-"images/ballet-art/IMG_0623_BAB_NFT.jpg",
-"images/ballet-art/IMG_3022_Ballet_Art.jpg"
+"images/ballet-art/Ballet_Art_01.jpg",
+"images/ballet-art/Ballet_Art_02.jpg",
+"images/ballet-art/Ballet_Art_03.jpg"
 
 ];
 
@@ -253,6 +281,7 @@ const img = document.createElement('img');
 
 img.src = src;
 img.alt = '';
+img.draggable = false;
 
 gallery.appendChild(img);
 
@@ -272,7 +301,7 @@ gallery.addEventListener('wheel', function(e){
 e.preventDefault();
 gallery.scrollLeft += e.deltaY;
 
-});
+},{ passive:false });
 
 document.addEventListener('keydown', function(e){
 

@@ -15,8 +15,6 @@ body{
     font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
     user-select:none;
     -webkit-user-select:none;
-    -moz-user-select:none;
-    -ms-user-select:none;
 }
 
 header{
@@ -77,7 +75,6 @@ nav a:hover{
     display:block;
     flex-shrink:0;
     -webkit-user-drag:none;
-    user-drag:none;
 }
 
 .arrow{
@@ -175,7 +172,6 @@ nav a{
 <h1>JEFF RESTA</h1>
 
 <nav>
-
 <a href="index.html">Home</a>
 <span class="separator">•</span>
 
@@ -192,24 +188,17 @@ nav a{
 <span class="separator">•</span>
 
 <a href="about.html">About</a>
-
 </nav>
 
 </header>
 
 <div class="gallery-wrapper">
 
-<button class="arrow arrow-left" onclick="scrollGallery(-900)">
-‹
-</button>
+<button class="arrow arrow-left" onclick="scrollGallery(-900)">‹</button>
 
-<div class="gallery" id="gallery">
+<div class="gallery" id="gallery"></div>
 
-</div>
-
-<button class="arrow arrow-right" onclick="scrollGallery(900)">
-›
-</button>
+<button class="arrow arrow-right" onclick="scrollGallery(900)">›</button>
 
 </div>
 
@@ -243,16 +232,38 @@ const gallery = document.getElementById('gallery');
 
 const images = [
 
+"images/concert/AIC_IMG_7928.jpg",
+"images/concert/AIC_IMG_7949.jpg",
+"images/concert/Aaron_Lewis_IMG_1382.jpg",
 "images/concert/Alicia_Keys_IMG_2884.jpg",
+"images/concert/Apocalyptica_IMG_4727.jpg",
 "images/concert/Billy_Idol_IMG_1104.jpg",
 "images/concert/Black_Label_Society_Zakk_Wylde_IMG_5611.jpg",
+"images/concert/Breaking_Benjamin_IMG_2759_3x4.jpg",
+"images/concert/Chevelle_IMG_0412.jpg",
 "images/concert/Chris_Cornell_IMG_1502.jpg",
+"images/concert/Corey_Taylor_IMG_5457.jpg",
+"images/concert/Counting_Crowes_IMG_1724.jpg",
+"images/concert/Dave_Mustaine_IMG_2589.jpg",
 "images/concert/David_Grey_IMG_7748.jpg",
 "images/concert/Deftones_IMG_4112.jpg",
+"images/concert/Doyle_IMG_1727.jpg",
+"images/concert/Erykah_Badu_IMG_3496.jpg",
+"images/concert/Flaming_Lips_IMG_0724.jpg",
+"images/concert/Goo_Goo_Dolls_IMG_9773.jpg",
+"images/concert/IMG_9930.jpg",
+"images/concert/Jeff_Beck_IMG_4610.jpg",
 "images/concert/Linkin_Park_Chester_Bennington_IMG_0134.jpg",
+"images/concert/Papa_Roach_IMG_5622.jpg",
+"images/concert/Paramore_IMG_1728.jpg",
 "images/concert/Rob_Zombie_IMG_4884.jpg",
+"images/concert/Rob_Zombie_IMG_5561.jpg",
 "images/concert/Roger_Waters_IMG_6152.jpg",
-"images/concert/Soundgarden_IMG_1243.jpg"
+"images/concert/Rush_IMG_6540.jpg",
+"images/concert/Seal_IMG_9231.jpg",
+"images/concert/Slayer_IMG_2598.jpg",
+"images/concert/Soundgarden_IMG_1243.jpg",
+"images/concert/Steve_Vai_IMG_9087.jpg"
 
 ];
 
@@ -295,7 +306,6 @@ behavior: 'smooth'
 gallery.addEventListener('wheel', function(e){
 
 e.preventDefault();
-
 gallery.scrollLeft += e.deltaY;
 
 });

@@ -13,6 +13,10 @@ body{
     background:#ffffff;
     color:#111;
     font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    user-select:none;
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
 }
 
 header{
@@ -72,6 +76,8 @@ nav a:hover{
     width:auto;
     display:block;
     flex-shrink:0;
+    -webkit-user-drag:none;
+    user-drag:none;
 }
 
 .arrow{
@@ -225,6 +231,14 @@ Promoting Music &amp; The Performing Arts through Photography &amp; Media.
 
 <script>
 
+document.addEventListener('contextmenu', function(e){
+    e.preventDefault();
+});
+
+document.addEventListener('dragstart', function(e){
+    e.preventDefault();
+});
+
 const gallery = document.getElementById('gallery');
 
 const images = [
@@ -263,7 +277,7 @@ randomizedImages.forEach(src => {
 const img = document.createElement('img');
 
 img.src = src;
-img.alt = "";
+img.alt = '';
 
 gallery.appendChild(img);
 

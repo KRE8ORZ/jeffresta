@@ -13,6 +13,8 @@ body{
     background:#ffffff;
     color:#111;
     font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    user-select:none;
+    -webkit-user-select:none;
 }
 
 header{
@@ -72,6 +74,8 @@ nav a:hover{
     width:auto;
     display:block;
     flex-shrink:0;
+    -webkit-user-drag:none;
+    user-select:none;
 }
 
 .arrow{
@@ -197,9 +201,7 @@ nav a{
 ‹
 </button>
 
-<div class="gallery" id="gallery">
-
-</div>
+<div class="gallery" id="gallery"></div>
 
 <button class="arrow arrow-right" onclick="scrollGallery(900)">
 ›
@@ -225,12 +227,58 @@ Promoting Music &amp; The Performing Arts through Photography &amp; Media.
 
 <script>
 
+document.addEventListener('contextmenu', function(e){
+    e.preventDefault();
+});
+
+document.addEventListener('dragstart', function(e){
+    e.preventDefault();
+});
+
+document.addEventListener('selectstart', function(e){
+    e.preventDefault();
+});
+
+document.addEventListener('keydown', function(e){
+
+    const key = e.key.toLowerCase();
+
+    if(
+        (e.metaKey && key === 's') ||
+        (e.ctrlKey && key === 's')
+    ){
+        e.preventDefault();
+    }
+
+    if(
+        key === 'f12' ||
+        (e.ctrlKey && e.shiftKey && key === 'i') ||
+        (e.ctrlKey && e.shiftKey && key === 'j') ||
+        (e.ctrlKey && e.shiftKey && key === 'c') ||
+        (e.metaKey && e.altKey && key === 'i')
+    ){
+        e.preventDefault();
+    }
+
+});
+
 const gallery = document.getElementById('gallery');
 
 const images = [
 
+"images/ballet/TBT_IMG_0547.jpg",
+"images/ballet/TBT_IMG_0773.jpg",
+"images/ballet/TBT_IMG_0828.jpg",
+"images/ballet/TBT_IMG_1176.jpg",
+"images/ballet/TBT_IMG_1239.jpg",
+"images/ballet/TBT_IMG_1291.jpg",
+"images/ballet/TBT_IMG_1554.jpg",
+"images/ballet/TBT_IMG_1683.jpg",
 "images/ballet/TBT_IMG_1736.jpg",
-"images/ballet/TBT_IMG_2842.jpg"
+"images/ballet/TBT_IMG_2266.jpg",
+"images/ballet/TBT_IMG_2842.jpg",
+"images/ballet/TBT_IMG_3020.jpg",
+"images/ballet/TBT_IMG_3430.jpg"
 
 ];
 
@@ -255,7 +303,8 @@ randomizedImages.forEach(src => {
 const img = document.createElement('img');
 
 img.src = src;
-img.alt = "";
+img.alt = '';
+img.draggable = false;
 
 gallery.appendChild(img);
 
@@ -273,10 +322,9 @@ behavior: 'smooth'
 gallery.addEventListener('wheel', function(e){
 
 e.preventDefault();
-
 gallery.scrollLeft += e.deltaY;
 
-});
+},{ passive:false });
 
 document.addEventListener('keydown', function(e){
 

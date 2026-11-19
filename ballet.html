@@ -1,6 +1,296 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Jeff Resta | Ballet Photography</title>
+
+<style>
+
+body{
+    margin:0;
+    background:#ffffff;
+    color:#111;
+    font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+header{
+    text-align:center;
+    padding:8px 20px 5px;
+}
+
+h1{
+    margin:0 0 4px 0;
+    font-size:2rem;
+    font-weight:300;
+    letter-spacing:.15em;
+}
+
+nav{
+    margin:0;
+}
+
+nav a{
+    color:#555;
+    text-decoration:none;
+    margin:0 5px;
+    font-size:.9rem;
+}
+
+nav a:hover{
+    color:#000;
+}
+
+.separator{
+    color:#c5c5c5;
+    margin:0 4px;
+}
+
+.gallery-wrapper{
+    position:relative;
+    width:100%;
+    margin-top:5px;
+}
+
+.gallery{
+    display:flex;
+    align-items:flex-start;
+    gap:0;
+    overflow-x:auto;
+    overflow-y:hidden;
+    scroll-behavior:smooth;
+    scrollbar-width:none;
+}
+
+.gallery::-webkit-scrollbar{
+    display:none;
+}
+
+.gallery img{
+    height:755px;
+    width:auto;
+    display:block;
+    flex-shrink:0;
+}
+
+.arrow{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    width:42px;
+    height:42px;
+    border:none;
+    cursor:pointer;
+    background:rgba(255,255,255,.90);
+    color:#333;
+    font-size:24px;
+    z-index:100;
+}
+
+.arrow:hover{
+    background:#ffffff;
+    color:#000;
+}
+
+.arrow-left{
+    left:15px;
+}
+
+.arrow-right{
+    right:15px;
+}
+
+.bottom-text{
+    text-align:center;
+    margin-top:15px;
+}
+
+.bottom-text h2{
+    font-size:1rem;
+    font-weight:300;
+    color:#444;
+    margin:0 0 8px 0;
+}
+
+.bottom-text p{
+    font-size:.9rem;
+    color:#777;
+    margin:0;
+}
+
+.footer{
+    text-align:center;
+    color:#999;
+    font-size:.8rem;
+    margin-top:12px;
+    margin-bottom:20px;
+}
+
+@media (max-width:1200px){
+
+.gallery img{
+    height:635px;
+}
+
+}
+
+@media (max-width:768px){
+
+h1{
+    font-size:1.6rem;
+}
+
+nav a{
+    display:inline-block;
+    margin:4px 4px;
+}
+
+.separator{
+    display:none;
+}
+
+.gallery img{
+    height:420px;
+}
+
+.arrow{
+    display:none;
+}
+
+}
+
+</style>
+</head>
 <body>
-Coming Soon
+
+<header>
+
+<h1>JEFF RESTA</h1>
+
+<nav>
+
+<a href="index.html">Home</a>
+<span class="separator">•</span>
+
+<a href="concert.html">Concert Photography</a>
+<span class="separator">•</span>
+
+<a href="ballet.html">Ballet Photography</a>
+<span class="separator">•</span>
+
+<a href="performing-arts.html">Performing Arts Photography</a>
+<span class="separator">•</span>
+
+<a href="ballet-art.html">Ballet Art</a>
+<span class="separator">•</span>
+
+<a href="about.html">About</a>
+
+</nav>
+
+</header>
+
+<div class="gallery-wrapper">
+
+<button class="arrow arrow-left" onclick="scrollGallery(-900)">
+‹
+</button>
+
+<div class="gallery" id="gallery">
+
+</div>
+
+<button class="arrow arrow-right" onclick="scrollGallery(900)">
+›
+</button>
+
+</div>
+
+<div class="bottom-text">
+
+<h2>
+Concert, Ballet &amp; Performing Arts Photography
+</h2>
+
+<p>
+Promoting Music &amp; The Performing Arts through Photography &amp; Media.
+</p>
+
+</div>
+
+<div class="footer">
+© 2027 Jeff Resta Photography
+</div>
+
+<script>
+
+const gallery = document.getElementById('gallery');
+
+const images = [
+
+"images/ballet/TBT_IMG_1736.jpg",
+"images/ballet/TBT_IMG_2842.jpg"
+
+];
+
+function shuffle(array){
+
+for(let i = array.length - 1; i > 0; i--){
+
+const j = Math.floor(Math.random() * (i + 1));
+
+[array[i], array[j]] = [array[j], array[i]];
+
+}
+
+return array;
+
+}
+
+const randomizedImages = shuffle([...images]);
+
+randomizedImages.forEach(src => {
+
+const img = document.createElement('img');
+
+img.src = src;
+img.alt = "";
+
+gallery.appendChild(img);
+
+});
+
+function scrollGallery(amount){
+
+gallery.scrollBy({
+left: amount,
+behavior: 'smooth'
+});
+
+}
+
+gallery.addEventListener('wheel', function(e){
+
+e.preventDefault();
+
+gallery.scrollLeft += e.deltaY;
+
+});
+
+document.addEventListener('keydown', function(e){
+
+if(e.key === 'ArrowRight'){
+scrollGallery(900);
+}
+
+if(e.key === 'ArrowLeft'){
+scrollGallery(-900);
+}
+
+});
+
+</script>
+
 </body>
 </html>

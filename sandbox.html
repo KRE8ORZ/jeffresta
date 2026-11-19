@@ -10,115 +10,100 @@
 
 body{
     margin:0;
-    background:#fafaf8;
+    background:#ffffff;
     color:#111;
     font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
 .container{
-    max-width:1400px;
+    max-width:1200px;
     margin:0 auto;
-    padding:40px 30px 80px;
+    padding:10px 20px 40px;
 }
 
 header{
     text-align:center;
-    margin-bottom:40px;
-}
-
-h1{
-    font-size:2.6rem;
-    font-weight:300;
-    letter-spacing:.15em;
-    margin-bottom:15px;
-}
-
-.tagline{
-    font-size:1.3rem;
-    color:#444;
-    font-weight:300;
     margin-bottom:10px;
 }
 
-.subtagline{
-    font-size:.95rem;
-    color:#777;
-    margin-bottom:30px;
+h1{
+    margin:0 0 5px 0;
+    font-size:2rem;
+    font-weight:300;
+    letter-spacing:.15em;
 }
 
 nav{
-    margin-bottom:20px;
+    margin:0 0 15px 0;
 }
 
 nav a{
-    text-decoration:none;
     color:#555;
-    margin:0 12px;
-    font-size:.95rem;
+    text-decoration:none;
+    margin:0 8px;
+    font-size:.9rem;
 }
 
 nav a:hover{
-    color:#111;
+    color:#000;
 }
 
-.gallery{
-    column-count:4;
-    column-gap:24px;
+.hero-wall{
+    text-align:center;
 }
 
-.gallery a{
-    display:block;
-    margin-bottom:24px;
-    break-inside:avoid;
-}
-
-.gallery img{
+.hero-wall img{
     width:100%;
+    max-width:850px;
     height:auto;
     display:block;
-    border:0;
+    margin:0 auto 12px auto;
 }
 
-@media (max-width:1200px){
-    .gallery{
-        column-count:3;
-    }
+.bottom-text{
+    text-align:center;
+    margin-top:30px;
 }
 
-@media (max-width:800px){
-    .gallery{
-        column-count:2;
-    }
+.bottom-text h2{
+    font-size:1rem;
+    font-weight:300;
+    color:#444;
+    margin-bottom:8px;
 }
 
-@media (max-width:600px){
-
-.container{
-    padding:25px 15px 50px;
+.bottom-text p{
+    font-size:.9rem;
+    color:#777;
+    margin:0;
 }
 
-.gallery{
-    column-count:1;
+.footer{
+    text-align:center;
+    color:#999;
+    font-size:.8rem;
+    margin-top:25px;
 }
+
+@media (max-width:768px){
 
 h1{
-    font-size:2rem;
-}
-
-.tagline{
-    font-size:1.1rem;
+    font-size:1.6rem;
 }
 
 nav a{
     display:inline-block;
-    margin:6px 8px;
+    margin:4px 6px;
+}
+
+.hero-wall img{
+    max-width:100%;
 }
 
 }
 
 </style>
 </head>
-
 <body>
 
 <div class="container">
@@ -126,14 +111,6 @@ nav a{
 <header>
 
 <h1>JEFF RESTA</h1>
-
-<div class="tagline">
-Concert, Ballet &amp; Performing Arts Photography
-</div>
-
-<div class="subtagline">
-Promoting Music &amp; The Performing Arts through Photography &amp; Media.
-</div>
 
 <nav>
 <a href="index.html">Home</a>
@@ -146,23 +123,39 @@ Promoting Music &amp; The Performing Arts through Photography &amp; Media.
 
 </header>
 
-<div class="gallery">
+<div class="hero-wall">
 
-<a href="concert.html"><img src="images/hero/Alicia_Keys_IMG_2884.jpg"></a>
-<a href="concert.html"><img src="images/hero/Billy_Idol_IMG_1104.jpg"></a>
-<a href="concert.html"><img src="images/hero/Black_Label_Society_Zakk_Wylde_IMG_5611.jpg"></a>
-<a href="concert.html"><img src="images/hero/Chris_Cornell_IMG_1502.jpg"></a>
-<a href="concert.html"><img src="images/hero/David_Grey_IMG_7748.jpg"></a>
-<a href="concert.html"><img src="images/hero/Deftones_IMG_4112.jpg"></a>
-<a href="ballet-art.html"><img src="images/hero/IMG_3022_Ballet_Art.jpg"></a>
-<a href="performing-arts.html"><img src="images/hero/Kooza_IMG_7756.jpg"></a>
-<a href="concert.html"><img src="images/hero/Linkin_Park_Chester_Bennington_IMG_0134.jpg"></a>
-<a href="concert.html"><img src="images/hero/Rob_Zombie_IMG_4884.jpg"></a>
-<a href="concert.html"><img src="images/hero/Roger_Waters_IMG_6152.jpg"></a>
-<a href="concert.html"><img src="images/hero/Soundgarden_IMG_1243.jpg"></a>
-<a href="ballet.html"><img src="images/hero/TBT_IMG_1736.jpg"></a>
-<a href="ballet.html"><img src="images/hero/TBT_IMG_2842.jpg"></a>
+<img src="images/hero/Alicia_Keys_IMG_2884.jpg" alt="">
+<img src="images/hero/Billy_Idol_IMG_1104.jpg" alt="">
+<img src="images/hero/Black_Label_Society_Zakk_Wylde_IMG_5611.jpg" alt="">
+<img src="images/hero/Chris_Cornell_IMG_1502.jpg" alt="">
+<img src="images/hero/David_Grey_IMG_7748.jpg" alt="">
+<img src="images/hero/Deftones_IMG_4112.jpg" alt="">
+<img src="images/hero/IMG_3022_Ballet_Art.jpg" alt="">
+<img src="images/hero/Kooza_IMG_7756.jpg" alt="">
+<img src="images/hero/Linkin_Park_Chester_Bennington_IMG_0134.jpg" alt="">
+<img src="images/hero/Rob_Zombie_IMG_4884.jpg" alt="">
+<img src="images/hero/Roger_Waters_IMG_6152.jpg" alt="">
+<img src="images/hero/Soundgarden_IMG_1243.jpg" alt="">
+<img src="images/hero/TBT_IMG_1736.jpg" alt="">
+<img src="images/hero/TBT_IMG_2842.jpg" alt="">
 
+</div>
+
+<div class="bottom-text">
+
+<h2>
+Concert, Ballet &amp; Performing Arts Photography
+</h2>
+
+<p>
+Promoting Music &amp; The Performing Arts through Photography &amp; Media.
+</p>
+
+</div>
+
+<div class="footer">
+© 2027 Jeff Resta Photography
 </div>
 
 </div>

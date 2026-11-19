@@ -242,9 +242,9 @@ const images = [
 
 ];
 
-function shuffle(array) {
+function shuffle(array){
 
-for (let i = array.length - 1; i > 0; i--) {
+for(let i = array.length - 1; i > 0; i--){
 
 const j = Math.floor(Math.random() * (i + 1));
 
@@ -256,17 +256,26 @@ return array;
 
 }
 
-shuffle(images);
+const randomized = shuffle([...images]);
 
-images.forEach(src => {
+for(let set = 0; set < 5; set++){
+
+randomized.forEach(src => {
 
 const img = document.createElement('img');
 
 img.src = src;
-
 img.alt = '';
 
 gallery.appendChild(img);
+
+});
+
+}
+
+window.addEventListener('load', () => {
+
+gallery.scrollLeft = gallery.scrollWidth / 2;
 
 });
 
@@ -284,6 +293,24 @@ gallery.addEventListener('wheel', function(e){
 e.preventDefault();
 
 gallery.scrollLeft += e.deltaY;
+
+});
+
+gallery.addEventListener('scroll', () => {
+
+const resetZone = gallery.scrollWidth * 0.20;
+
+if(gallery.scrollLeft < resetZone){
+
+gallery.scrollLeft = gallery.scrollWidth / 2;
+
+}
+
+if(gallery.scrollLeft > gallery.scrollWidth - resetZone){
+
+gallery.scrollLeft = gallery.scrollWidth / 2;
+
+}
 
 });
 

@@ -199,17 +199,6 @@ nav a{
 
 <div class="gallery" id="gallery">
 
-<img src="images/concert/Alicia_Keys_IMG_2884.jpg" alt="">
-<img src="images/concert/Billy_Idol_IMG_1104.jpg" alt="">
-<img src="images/concert/Black_Label_Society_Zakk_Wylde_IMG_5611.jpg" alt="">
-<img src="images/concert/Chris_Cornell_IMG_1502.jpg" alt="">
-<img src="images/concert/David_Grey_IMG_7748.jpg" alt="">
-<img src="images/concert/Deftones_IMG_4112.jpg" alt="">
-<img src="images/concert/Linkin_Park_Chester_Bennington_IMG_0134.jpg" alt="">
-<img src="images/concert/Rob_Zombie_IMG_4884.jpg" alt="">
-<img src="images/concert/Roger_Waters_IMG_6152.jpg" alt="">
-<img src="images/concert/Soundgarden_IMG_1243.jpg" alt="">
-
 </div>
 
 <button class="arrow arrow-right" onclick="scrollGallery(900)">
@@ -238,27 +227,75 @@ Promoting Music &amp; The Performing Arts through Photography &amp; Media.
 
 const gallery = document.getElementById('gallery');
 
+const images = [
+
+"images/concert/Alicia_Keys_IMG_2884.jpg",
+"images/concert/Billy_Idol_IMG_1104.jpg",
+"images/concert/Black_Label_Society_Zakk_Wylde_IMG_5611.jpg",
+"images/concert/Chris_Cornell_IMG_1502.jpg",
+"images/concert/David_Grey_IMG_7748.jpg",
+"images/concert/Deftones_IMG_4112.jpg",
+"images/concert/Linkin_Park_Chester_Bennington_IMG_0134.jpg",
+"images/concert/Rob_Zombie_IMG_4884.jpg",
+"images/concert/Roger_Waters_IMG_6152.jpg",
+"images/concert/Soundgarden_IMG_1243.jpg"
+
+];
+
+function shuffle(array) {
+
+for (let i = array.length - 1; i > 0; i--) {
+
+const j = Math.floor(Math.random() * (i + 1));
+
+[array[i], array[j]] = [array[j], array[i]];
+
+}
+
+return array;
+
+}
+
+shuffle(images);
+
+images.forEach(src => {
+
+const img = document.createElement('img');
+
+img.src = src;
+
+img.alt = '';
+
+gallery.appendChild(img);
+
+});
+
 function scrollGallery(amount){
-    gallery.scrollBy({
-        left: amount,
-        behavior: 'smooth'
-    });
+
+gallery.scrollBy({
+left: amount,
+behavior: 'smooth'
+});
+
 }
 
 gallery.addEventListener('wheel', function(e){
-    e.preventDefault();
-    gallery.scrollLeft += e.deltaY;
+
+e.preventDefault();
+
+gallery.scrollLeft += e.deltaY;
+
 });
 
 document.addEventListener('keydown', function(e){
 
-    if(e.key === 'ArrowRight'){
-        scrollGallery(900);
-    }
+if(e.key === 'ArrowRight'){
+scrollGallery(900);
+}
 
-    if(e.key === 'ArrowLeft'){
-        scrollGallery(-900);
-    }
+if(e.key === 'ArrowLeft'){
+scrollGallery(-900);
+}
 
 });
 

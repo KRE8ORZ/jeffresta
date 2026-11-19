@@ -13,6 +13,8 @@ body{
     background:#ffffff;
     color:#111;
     font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    user-select:none;
+    -webkit-user-select:none;
 }
 
 header{
@@ -72,6 +74,8 @@ nav a:hover{
     width:auto;
     display:block;
     flex-shrink:0;
+    -webkit-user-drag:none;
+    user-select:none;
 }
 
 .arrow{
@@ -197,9 +201,7 @@ nav a{
 ‹
 </button>
 
-<div class="gallery" id="gallery">
-
-</div>
+<div class="gallery" id="gallery"></div>
 
 <button class="arrow arrow-right" onclick="scrollGallery(900)">
 ›
@@ -225,11 +227,55 @@ Promoting Music &amp; The Performing Arts through Photography &amp; Media.
 
 <script>
 
+document.addEventListener('contextmenu', function(e){
+    e.preventDefault();
+});
+
+document.addEventListener('dragstart', function(e){
+    e.preventDefault();
+});
+
+document.addEventListener('selectstart', function(e){
+    e.preventDefault();
+});
+
+document.addEventListener('keydown', function(e){
+
+    const key = e.key.toLowerCase();
+
+    if(
+        (e.metaKey && key === 's') ||
+        (e.ctrlKey && key === 's')
+    ){
+        e.preventDefault();
+    }
+
+    if(
+        key === 'f12' ||
+        (e.ctrlKey && e.shiftKey && key === 'i') ||
+        (e.ctrlKey && e.shiftKey && key === 'j') ||
+        (e.ctrlKey && e.shiftKey && key === 'c') ||
+        (e.metaKey && e.altKey && key === 'i')
+    ){
+        e.preventDefault();
+    }
+
+});
+
 const gallery = document.getElementById('gallery');
 
 const images = [
 
-"images/performing-arts/Kooza_IMG_7756.jpg"
+"images/performing-arts/Cirque_Du_Soleil_Kooza_01.jpg",
+"images/performing-arts/Cirque_Du_Soleil_Kooza_02.jpg",
+"images/performing-arts/Cirque_Du_Soleil_Kooza_03.jpg",
+"images/performing-arts/Cirque_Du_Soleil_Kooza_04.jpg",
+"images/performing-arts/Cirque_Du_Soleil_Kooza_05.jpg",
+"images/performing-arts/Cirque_Du_Soleil_Kooza_06.jpg",
+"images/performing-arts/Cirque_Du_Soleil_Kooza_07.jpg",
+"images/performing-arts/Cirque_Du_Soleil_Kooza_08.jpg",
+"images/performing-arts/Cirque_Du_Soleil_Kooza_09.jpg",
+"images/performing-arts/Cirque_Du_Soleil_Kooza_10.jpg"
 
 ];
 
@@ -254,7 +300,8 @@ randomizedImages.forEach(src => {
 const img = document.createElement('img');
 
 img.src = src;
-img.alt = "";
+img.alt = '';
+img.draggable = false;
 
 gallery.appendChild(img);
 
@@ -272,10 +319,9 @@ behavior: 'smooth'
 gallery.addEventListener('wheel', function(e){
 
 e.preventDefault();
-
 gallery.scrollLeft += e.deltaY;
 
-});
+},{ passive:false });
 
 document.addEventListener('keydown', function(e){
 

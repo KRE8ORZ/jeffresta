@@ -1,6 +1,226 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Jeff Resta | Concert Photography</title>
+
+<style>
+
+body{
+    margin:0;
+    background:#ffffff;
+    color:#111;
+    font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+.container{
+    max-width:1150px;
+    margin:0 auto;
+    padding:8px 20px 30px;
+}
+
+header{
+    text-align:center;
+    margin-bottom:8px;
+}
+
+h1{
+    margin:0 0 4px 0;
+    font-size:2rem;
+    font-weight:300;
+    letter-spacing:.15em;
+}
+
+nav{
+    margin:0 0 5px 0;
+}
+
+nav a{
+    color:#555;
+    text-decoration:none;
+    margin:0 5px;
+    font-size:.9rem;
+}
+
+nav a:hover{
+    color:#000;
+}
+
+.separator{
+    color:#c5c5c5;
+    margin:0 4px;
+}
+
+.page-title{
+    text-align:center;
+    font-size:1rem;
+    color:#555;
+    font-weight:300;
+    margin:20px 0;
+}
+
+.gallery-wrapper{
+    position:relative;
+}
+
+.gallery{
+    display:flex;
+    gap:12px;
+    overflow-x:auto;
+    scroll-behavior:smooth;
+    scrollbar-width:none;
+    padding:10px 0;
+}
+
+.gallery::-webkit-scrollbar{
+    display:none;
+}
+
+.gallery img{
+    height:550px;
+    width:auto;
+    display:block;
+    flex-shrink:0;
+}
+
+.scroll-button{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    width:42px;
+    height:42px;
+    border:none;
+    border-radius:50%;
+    background:rgba(255,255,255,.9);
+    color:#444;
+    cursor:pointer;
+    font-size:22px;
+    box-shadow:0 2px 10px rgba(0,0,0,.15);
+    z-index:100;
+}
+
+.scroll-button:hover{
+    background:#fff;
+    color:#000;
+}
+
+.left{
+    left:-20px;
+}
+
+.right{
+    right:-20px;
+}
+
+@media(max-width:768px){
+
+h1{
+    font-size:1.6rem;
+}
+
+.gallery img{
+    height:350px;
+}
+
+.scroll-button{
+    display:none;
+}
+
+.separator{
+    display:none;
+}
+
+nav a{
+    display:inline-block;
+    margin:4px 4px;
+}
+
+}
+
+</style>
+</head>
 <body>
-Coming Soon
+
+<div class="container">
+
+<header>
+
+<h1>JEFF RESTA</h1>
+
+<nav>
+<a href="index.html">Home</a>
+<span class="separator">•</span>
+
+<a href="concert.html">Concert Photography</a>
+<span class="separator">•</span>
+
+<a href="ballet.html">Ballet Photography</a>
+<span class="separator">•</span>
+
+<a href="performing-arts.html">Performing Arts Photography</a>
+<span class="separator">•</span>
+
+<a href="ballet-art.html">Ballet Art</a>
+<span class="separator">•</span>
+
+<a href="about.html">About</a>
+</nav>
+
+</header>
+
+<div class="page-title">
+Concert Photography
+</div>
+
+<div class="gallery-wrapper">
+
+<button class="scroll-button left" onclick="scrollGallery(-800)">
+‹
+</button>
+
+<div class="gallery" id="gallery">
+
+<img src="images/concert/Alicia_Keys_IMG_2884.jpg" alt="">
+<img src="images/concert/Billy_Idol_IMG_1104.jpg" alt="">
+<img src="images/concert/Black_Label_Society_Zakk_Wylde_IMG_5611.jpg" alt="">
+<img src="images/concert/Chris_Cornell_IMG_1502.jpg" alt="">
+<img src="images/concert/David_Grey_IMG_7748.jpg" alt="">
+<img src="images/concert/Deftones_IMG_4112.jpg" alt="">
+<img src="images/concert/Linkin_Park_Chester_Bennington_IMG_0134.jpg" alt="">
+<img src="images/concert/Rob_Zombie_IMG_4884.jpg" alt="">
+<img src="images/concert/Roger_Waters_IMG_6152.jpg" alt="">
+<img src="images/concert/Soundgarden_IMG_1243.jpg" alt="">
+
+</div>
+
+<button class="scroll-button right" onclick="scrollGallery(800)">
+›
+</button>
+
+</div>
+
+</div>
+
+<script>
+
+function scrollGallery(amount){
+    document.getElementById('gallery')
+        .scrollBy({
+            left: amount,
+            behavior: 'smooth'
+        });
+}
+
+const gallery = document.getElementById('gallery');
+
+gallery.addEventListener('wheel', function(e) {
+    e.preventDefault();
+    gallery.scrollLeft += e.deltaY;
+});
+
+</script>
+
 </body>
 </html>

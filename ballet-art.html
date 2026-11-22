@@ -4,7 +4,23 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Jeff Resta | Ballet Art</title>
+<title>Ballet Art | Jeff Resta</title>
+
+<meta name="description" content="Fine art ballet photography by Jeff Resta exploring movement, form, light and composition through dance-inspired imagery.">
+
+<link rel="canonical" href="https://www.jeffresta.com/ballet-art.html">
+
+<meta property="og:title" content="Ballet Art | Jeff Resta">
+<meta property="og:description" content="Fine art ballet photography exploring movement, form and artistic expression through dance.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.jeffresta.com/ballet-art.html">
+<meta property="og:image" content="https://www.jeffresta.com/og-image.jpg">
+<meta property="og:site_name" content="Jeff Resta Photography">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Ballet Art | Jeff Resta">
+<meta name="twitter:description" content="Fine art ballet photography exploring movement, form and artistic expression through dance.">
+<meta name="twitter:image" content="https://www.jeffresta.com/og-image.jpg">
 
 <style>
 
@@ -121,6 +137,7 @@ nav a:hover{
     font-size:.9rem;
     color:#555;
     margin:0;
+    line-height:1.5;
 }
 
 .footer{
@@ -185,7 +202,7 @@ nav a{
 <a href="performing-arts.html">Performing Arts Photography</a>
 <span class="separator">•</span>
 
-<a href="ballet-art.html">Ballet Art</a>
+<a href="ballet-art.html" aria-current="page">Ballet Art</a>
 <span class="separator">•</span>
 
 <a href="about.html">About</a>
@@ -195,17 +212,19 @@ nav a{
 
 <div class="gallery-wrapper">
 
-<button class="arrow arrow-left" onclick="scrollGallery(-900)">‹</button>
+<button class="arrow arrow-left" type="button" aria-label="Previous images" onclick="scrollGallery(-900)">‹</button>
 
 <div class="gallery" id="gallery"></div>
 
-<button class="arrow arrow-right" onclick="scrollGallery(900)">›</button>
+<button class="arrow arrow-right" type="button" aria-label="Next images" onclick="scrollGallery(900)">›</button>
 
 </div>
 
 <div class="bottom-text">
-<h2>Concert, Ballet &amp; Performing Arts Photography</h2>
-<p>Promoting Music &amp; The Performing Arts through Photography &amp; Media.</p>
+<h2>Ballet Art</h2>
+<p>
+Fine art ballet photography exploring movement, form, light and composition through dance-inspired imagery.
+</p>
 </div>
 
 <div class="footer">
@@ -253,18 +272,27 @@ const gallery = document.getElementById('gallery');
 
 const images = [
 
-"images/ballet-art/Ballet_Art_01.jpg",
-"images/ballet-art/Ballet_Art_02.jpg",
-"images/ballet-art/Ballet_Art_03.jpg"
+{
+    src:"images/ballet-art/Ballet_Art_01.jpg",
+    alt:"Fine art ballet photograph exploring movement and form."
+},
+{
+    src:"images/ballet-art/Ballet_Art_02.jpg",
+    alt:"Artistic ballet image emphasizing composition, light and motion."
+},
+{
+    src:"images/ballet-art/Ballet_Art_03.jpg",
+    alt:"Dance-inspired fine art photograph created by Jeff Resta."
+}
 
 ];
 
-images.forEach(src => {
+images.forEach(image => {
 
     const img = document.createElement('img');
 
-    img.src = src;
-    img.alt = '';
+    img.src = image.src;
+    img.alt = image.alt;
     img.draggable = false;
 
     gallery.appendChild(img);

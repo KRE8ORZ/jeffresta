@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
 
 <title>Concert Photography | Jeff Resta</title>
 
@@ -184,6 +185,8 @@ nav a{
 </head>
 <body>
 
+<main>
+
 <header>
 
 <h1>JEFF RESTA</h1>
@@ -230,6 +233,8 @@ Featured work includes Roger Waters, Chris Cornell, Soundgarden, Paramore, Alice
 © 2027 Jeff Resta Photography
 </div>
 
+</main>
+
 <script>
 
 document.addEventListener('contextmenu', function(e){
@@ -243,146 +248,41 @@ document.addEventListener('dragstart', function(e){
 const gallery = document.getElementById('gallery');
 
 const images = [
-    {
-        src:"images/concert/Aaron_Lewis_Staind_01.jpg",
-        alt:"Aaron Lewis of Staind performing live in concert."
-    },
-    {
-        src:"images/concert/Adam_Duritz_Counting_Crows_01.jpg",
-        alt:"Adam Duritz of Counting Crows performing live in concert."
-    },
-    {
-        src:"images/concert/Alicia_Keys_01.jpg",
-        alt:"Alicia Keys performing live in concert."
-    },
-    {
-        src:"images/concert/Apocalyptica_01.jpg",
-        alt:"Apocalyptica performing live in concert."
-    },
-    {
-        src:"images/concert/Benjamin_Burnley_Breaking_Benjamin_01.jpg",
-        alt:"Benjamin Burnley of Breaking Benjamin performing live in concert."
-    },
-    {
-        src:"images/concert/Billy_Idol_Rebel_Yell_01.jpg",
-        alt:"Billy Idol performing Rebel Yell live in concert."
-    },
-    {
-        src:"images/concert/Brian_Head_Welch_Korn_01.jpg",
-        alt:"Brian Head Welch of Korn performing live in concert."
-    },
-    {
-        src:"images/concert/Chester_Bennington_Linkin_Park_01.jpg",
-        alt:"Chester Bennington of Linkin Park performing live in concert."
-    },
-    {
-        src:"images/concert/Chino_Moreno_Deftones_01.jpg",
-        alt:"Chino Moreno of Deftones performing live in concert."
-    },
-    {
-        src:"images/concert/Chris_Cornell_Soundgarden_02.jpg",
-        alt:"Chris Cornell of Soundgarden performing live in concert."
-    },
-    {
-        src:"images/concert/Chris_Cornell_Soundgarden_Solo_Acoustic_Songbook_Tour_01.jpg",
-        alt:"Chris Cornell performing during the solo acoustic Songbook Tour."
-    },
-    {
-        src:"images/concert/Corey_Taylor_Slipknot_Stone_Sour_01.jpg",
-        alt:"Corey Taylor of Slipknot and Stone Sour performing live in concert."
-    },
-    {
-        src:"images/concert/Dave_Mustaine_Megadeth_01.jpg",
-        alt:"Dave Mustaine of Megadeth performing live in concert."
-    },
-    {
-        src:"images/concert/David_Gray_01.jpg",
-        alt:"David Gray performing live in concert."
-    },
-    {
-        src:"images/concert/Doyle_Bramhall_II_01.jpg",
-        alt:"Doyle Bramhall II performing live in concert."
-    },
-    {
-        src:"images/concert/Erykah_Badu_01.jpg",
-        alt:"Erykah Badu performing live in concert."
-    },
-    {
-        src:"images/concert/Hayley_Williams_Paramore_01.jpg",
-        alt:"Hayley Williams of Paramore performing live in concert."
-    },
-    {
-        src:"images/concert/Hayley_Williams_Paramore_02.jpg",
-        alt:"Hayley Williams of Paramore performing onstage in concert."
-    },
-    {
-        src:"images/concert/Jacoby_Shaddix_Papa_Roach_01.jpg",
-        alt:"Jacoby Shaddix of Papa Roach performing live in concert."
-    },
-    {
-        src:"images/concert/Jacoby_Shaddix_Papa_Roach_02.jpg",
-        alt:"Jacoby Shaddix of Papa Roach performing onstage in concert."
-    },
-    {
-        src:"images/concert/Jeff_Beck_01.jpg",
-        alt:"Jeff Beck playing guitar live in concert."
-    },
-    {
-        src:"images/concert/William_DuVall_Alice_In_Chains_01.jpg",
-        alt:"William DuVall of Alice In Chains performing live in concert."
-    },
-    {
-        src:"images/concert/William_DuVall_Alice_In_Chains_02.jpg",
-        alt:"William DuVall of Alice In Chains performing onstage in concert."
-    },
-    {
-        src:"images/concert/John_Rzeznik_Goo_Goo_Dolls_01.jpg",
-        alt:"John Rzeznik of the Goo Goo Dolls performing live in concert."
-    },
-    {
-        src:"images/concert/Neil_Peart_Rush_01.jpg",
-        alt:"Neil Peart of Rush playing drums live in concert."
-    },
-    {
-        src:"images/concert/Pete_Loeffler_Chevelle_01.jpg",
-        alt:"Pete Loeffler of Chevelle performing live in concert."
-    },
-    {
-        src:"images/concert/Rob_Zombie_01.jpg",
-        alt:"Rob Zombie performing live in concert."
-    },
-    {
-        src:"images/concert/Rob_Zombie_02.jpg",
-        alt:"Rob Zombie performing onstage in concert."
-    },
-    {
-        src:"images/concert/Roger_Waters_Pink_Floyd_The_Wall_Tour_01.jpg",
-        alt:"Roger Waters performing during The Wall tour."
-    },
-    {
-        src:"images/concert/Seal_01.jpg",
-        alt:"Seal performing live in concert."
-    },
-    {
-        src:"images/concert/Steve_Vai_01.jpg",
-        alt:"Steve Vai playing guitar live in concert."
-    },
-    {
-        src:"images/concert/Tom_Araya_Slayer_01.jpg",
-        alt:"Tom Araya of Slayer performing live in concert."
-    },
-    {
-        src:"images/concert/Wayne_Coyne_Flaming_Lips_01.jpg",
-        alt:"Wayne Coyne of The Flaming Lips performing live in concert."
-    },
-    {
-        src:"images/concert/Wes_Scantlin_Puddle_Of_Mudd.jpg",
-        alt:"Wes Scantlin of Puddle of Mudd performing live in concert."
-    },
-    {
-        src:"images/concert/Zakk_Wylde_Black_Label_Society_01.jpg",
-        alt:"Zakk Wylde of Black Label Society playing guitar live in concert."
-    }
+{src:"images/concert/Aaron_Lewis_Staind_01.jpg",alt:"Aaron Lewis of Staind performing live in concert."},
+{src:"images/concert/Adam_Duritz_Counting_Crows_01.jpg",alt:"Adam Duritz of Counting Crows performing live in concert."},
+{src:"images/concert/Alicia_Keys_01.jpg",alt:"Alicia Keys performing live in concert."},
+{src:"images/concert/Apocalyptica_01.jpg",alt:"Apocalyptica performing live in concert."},
+{src:"images/concert/Benjamin_Burnley_Breaking_Benjamin_01.jpg",alt:"Benjamin Burnley of Breaking Benjamin performing live in concert."},
+{src:"images/concert/Billy_Idol_Rebel_Yell_01.jpg",alt:"Billy Idol performing Rebel Yell live in concert."},
+{src:"images/concert/Brian_Head_Welch_Korn_01.jpg",alt:"Brian Head Welch of Korn performing live in concert."},
+{src:"images/concert/Chester_Bennington_Linkin_Park_01.jpg",alt:"Chester Bennington of Linkin Park performing live in concert."},
+{src:"images/concert/Chino_Moreno_Deftones_01.jpg",alt:"Chino Moreno of Deftones performing live in concert."},
+{src:"images/concert/Chris_Cornell_Soundgarden_02.jpg",alt:"Chris Cornell of Soundgarden performing live in concert."},
+{src:"images/concert/Chris_Cornell_Soundgarden_Solo_Acoustic_Songbook_Tour_01.jpg",alt:"Chris Cornell performing during the solo acoustic Songbook Tour."},
+{src:"images/concert/Corey_Taylor_Slipknot_Stone_Sour_01.jpg",alt:"Corey Taylor of Slipknot and Stone Sour performing live in concert."},
+{src:"images/concert/Dave_Mustaine_Megadeth_01.jpg",alt:"Dave Mustaine of Megadeth performing live in concert."},
+{src:"images/concert/David_Gray_01.jpg",alt:"David Gray performing live in concert."},
+{src:"images/concert/Doyle_Bramhall_II_01.jpg",alt:"Doyle Bramhall II performing live in concert."},
+{src:"images/concert/Erykah_Badu_01.jpg",alt:"Erykah Badu performing live in concert."},
+{src:"images/concert/Hayley_Williams_Paramore_01.jpg",alt:"Hayley Williams of Paramore performing live in concert."},
+{src:"images/concert/Hayley_Williams_Paramore_02.jpg",alt:"Hayley Williams of Paramore performing onstage in concert."},
+{src:"images/concert/Jacoby_Shaddix_Papa_Roach_01.jpg",alt:"Jacoby Shaddix of Papa Roach performing live in concert."},
+{src:"images/concert/Jacoby_Shaddix_Papa_Roach_02.jpg",alt:"Jacoby Shaddix of Papa Roach performing onstage in concert."},
+{src:"images/concert/Jeff_Beck_01.jpg",alt:"Jeff Beck playing guitar live in concert."},
+{src:"images/concert/William_DuVall_Alice_In_Chains_01.jpg",alt:"William DuVall of Alice In Chains performing live in concert."},
+{src:"images/concert/William_DuVall_Alice_In_Chains_02.jpg",alt:"William DuVall of Alice In Chains performing onstage in concert."},
+{src:"images/concert/John_Rzeznik_Goo_Goo_Dolls_01.jpg",alt:"John Rzeznik of the Goo Goo Dolls performing live in concert."},
+{src:"images/concert/Neil_Peart_Rush_01.jpg",alt:"Neil Peart of Rush playing drums live in concert."},
+{src:"images/concert/Pete_Loeffler_Chevelle_01.jpg",alt:"Pete Loeffler of Chevelle performing live in concert."},
+{src:"images/concert/Rob_Zombie_01.jpg",alt:"Rob Zombie performing live in concert."},
+{src:"images/concert/Rob_Zombie_02.jpg",alt:"Rob Zombie performing onstage in concert."},
+{src:"images/concert/Roger_Waters_Pink_Floyd_The_Wall_Tour_01.jpg",alt:"Roger Waters performing during The Wall tour."},
+{src:"images/concert/Seal_01.jpg",alt:"Seal performing live in concert."},
+{src:"images/concert/Steve_Vai_01.jpg",alt:"Steve Vai playing guitar live in concert."},
+{src:"images/concert/Tom_Araya_Slayer_01.jpg",alt:"Tom Araya of Slayer performing live in concert."},
+{src:"images/concert/Wayne_Coyne_Flaming_Lips_01.jpg",alt:"Wayne Coyne of The Flaming Lips performing live in concert."},
+{src:"images/concert/Wes_Scantlin_Puddle_Of_Mudd.jpg",alt:"Wes Scantlin of Puddle of Mudd performing live in concert."},
+{src:"images/concert/Zakk_Wylde_Black_Label_Society_01.jpg",alt:"Zakk Wylde of Black Label Society playing guitar live in concert."}
 ];
 
 function shuffle(array){
@@ -390,7 +290,6 @@ function shuffle(array){
         const j = Math.floor(Math.random() * (i + 1));
         [array[i], array[j]] = [array[j], array[i]];
     }
-
     return array;
 }
 
@@ -398,25 +297,23 @@ const randomizedImages = shuffle([...images]);
 
 randomizedImages.forEach(image => {
     const img = document.createElement('img');
-
     img.src = image.src;
     img.alt = image.alt;
     img.draggable = false;
-
     gallery.appendChild(img);
 });
 
 function scrollGallery(amount){
     gallery.scrollBy({
-        left:amount,
-        behavior:'smooth'
+        left: amount,
+        behavior: 'smooth'
     });
 }
 
 gallery.addEventListener('wheel', function(e){
     e.preventDefault();
     gallery.scrollLeft += e.deltaY;
-}, { passive:false });
+},{ passive:false });
 
 document.addEventListener('keydown', function(e){
     if(e.key === 'ArrowRight'){

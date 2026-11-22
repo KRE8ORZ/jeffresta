@@ -4,7 +4,23 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Jeff Resta | Performing Arts Photography</title>
+<title>Performing Arts Photography | Jeff Resta</title>
+
+<meta name="description" content="Performing arts photography by Jeff Resta featuring Cirque du Soleil KOOZA and live theatrical productions captured through award-winning performance photography.">
+
+<link rel="canonical" href="https://www.jeffresta.com/performing-arts.html">
+
+<meta property="og:title" content="Performing Arts Photography | Jeff Resta">
+<meta property="og:description" content="Performing arts photography featuring Cirque du Soleil KOOZA photographed by Jeff Resta.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.jeffresta.com/performing-arts.html">
+<meta property="og:image" content="https://www.jeffresta.com/og-image.jpg">
+<meta property="og:site_name" content="Jeff Resta Photography">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Performing Arts Photography | Jeff Resta">
+<meta name="twitter:description" content="Performing arts photography featuring Cirque du Soleil KOOZA.">
+<meta name="twitter:image" content="https://www.jeffresta.com/og-image.jpg">
 
 <style>
 
@@ -121,6 +137,7 @@ nav a:hover{
     font-size:.9rem;
     color:#555;
     margin:0;
+    line-height:1.5;
 }
 
 .footer{
@@ -183,7 +200,7 @@ nav a{
 <a href="ballet.html">Ballet Photography</a>
 <span class="separator">•</span>
 
-<a href="performing-arts.html">Performing Arts Photography</a>
+<a href="performing-arts.html" aria-current="page">Performing Arts Photography</a>
 <span class="separator">•</span>
 
 <a href="ballet-art.html">Ballet Art</a>
@@ -197,13 +214,13 @@ nav a{
 
 <div class="gallery-wrapper">
 
-<button class="arrow arrow-left" onclick="scrollGallery(-900)">
+<button class="arrow arrow-left" type="button" aria-label="Previous images" onclick="scrollGallery(-900)">
 ‹
 </button>
 
 <div class="gallery" id="gallery"></div>
 
-<button class="arrow arrow-right" onclick="scrollGallery(900)">
+<button class="arrow arrow-right" type="button" aria-label="Next images" onclick="scrollGallery(900)">
 ›
 </button>
 
@@ -212,11 +229,11 @@ nav a{
 <div class="bottom-text">
 
 <h2>
-Concert, Ballet &amp; Performing Arts Photography
+Performing Arts Photography
 </h2>
 
 <p>
-Promoting Music &amp; The Performing Arts through Photography &amp; Media.
+Featured work includes Cirque du Soleil KOOZA and live theatrical productions.
 </p>
 
 </div>
@@ -266,24 +283,78 @@ const gallery = document.getElementById('gallery');
 
 const images = [
 
-"images/performing-arts/Cirque_Du_Soleil_Kooza_01.jpg",
-"images/performing-arts/Cirque_Du_Soleil_Kooza_02.jpg",
-"images/performing-arts/Cirque_Du_Soleil_Kooza_03.jpg",
-"images/performing-arts/Cirque_Du_Soleil_Kooza_04.jpg",
-"images/performing-arts/Cirque_Du_Soleil_Kooza_05.jpg",
-"images/performing-arts/Cirque_Du_Soleil_Kooza_06.jpg",
-"images/performing-arts/Cirque_Du_Soleil_Kooza_07.jpg",
-"images/performing-arts/Cirque_Du_Soleil_Kooza_08.jpg",
-"images/performing-arts/Cirque_Du_Soleil_Kooza_09.jpg",
-"images/performing-arts/Cirque_Du_Soleil_Kooza_10.jpg",
-"images/performing-arts/Cirque_Du_Soleil_Kooza_11.jpg",
-"images/performing-arts/Cirque_Du_Soleil_Kooza_12.jpg",
-"images/performing-arts/Cirque_Du_Soleil_Kooza_13.jpg",
-"images/performing-arts/Cirque_Du_Soleil_Kooza_14.jpg",
-"images/performing-arts/Cirque_Du_Soleil_Kooza_15.jpg",
-"images/performing-arts/Cirque_Du_Soleil_Kooza_16.jpg",
-"images/performing-arts/Cirque_Du_Soleil_Kooza_17.jpg",
-"images/performing-arts/Cirque_Du_Soleil_Kooza_18.jpg"
+{
+src:"images/performing-arts/Cirque_Du_Soleil_Kooza_01.jpg",
+alt:"Performer from Cirque du Soleil KOOZA during a live stage production."
+},
+{
+src:"images/performing-arts/Cirque_Du_Soleil_Kooza_02.jpg",
+alt:"Cirque du Soleil KOOZA performance photographed on stage."
+},
+{
+src:"images/performing-arts/Cirque_Du_Soleil_Kooza_03.jpg",
+alt:"Acrobatic performance from Cirque du Soleil KOOZA."
+},
+{
+src:"images/performing-arts/Cirque_Du_Soleil_Kooza_04.jpg",
+alt:"Stage performer in Cirque du Soleil KOOZA."
+},
+{
+src:"images/performing-arts/Cirque_Du_Soleil_Kooza_05.jpg",
+alt:"Live theatrical scene from Cirque du Soleil KOOZA."
+},
+{
+src:"images/performing-arts/Cirque_Du_Soleil_Kooza_06.jpg",
+alt:"Cirque du Soleil KOOZA production photographed by Jeff Resta."
+},
+{
+src:"images/performing-arts/Cirque_Du_Soleil_Kooza_07.jpg",
+alt:"Acrobatic performer during Cirque du Soleil KOOZA."
+},
+{
+src:"images/performing-arts/Cirque_Du_Soleil_Kooza_08.jpg",
+alt:"Cirque du Soleil KOOZA stage performance."
+},
+{
+src:"images/performing-arts/Cirque_Du_Soleil_Kooza_09.jpg",
+alt:"Theatrical performance from Cirque du Soleil KOOZA."
+},
+{
+src:"images/performing-arts/Cirque_Du_Soleil_Kooza_10.jpg",
+alt:"Performer featured in Cirque du Soleil KOOZA."
+},
+{
+src:"images/performing-arts/Cirque_Du_Soleil_Kooza_11.jpg",
+alt:"Cirque du Soleil KOOZA live production."
+},
+{
+src:"images/performing-arts/Cirque_Du_Soleil_Kooza_12.jpg",
+alt:"Acrobats performing in Cirque du Soleil KOOZA."
+},
+{
+src:"images/performing-arts/Cirque_Du_Soleil_Kooza_13.jpg",
+alt:"Stage act from Cirque du Soleil KOOZA photographed by Jeff Resta."
+},
+{
+src:"images/performing-arts/Cirque_Du_Soleil_Kooza_14.jpg",
+alt:"Cirque du Soleil KOOZA performer on stage."
+},
+{
+src:"images/performing-arts/Cirque_Du_Soleil_Kooza_15.jpg",
+alt:"Live performance scene from Cirque du Soleil KOOZA."
+},
+{
+src:"images/performing-arts/Cirque_Du_Soleil_Kooza_16.jpg",
+alt:"Cirque du Soleil KOOZA production photography."
+},
+{
+src:"images/performing-arts/Cirque_Du_Soleil_Kooza_17.jpg",
+alt:"Acrobatic stage performance during Cirque du Soleil KOOZA."
+},
+{
+src:"images/performing-arts/Cirque_Du_Soleil_Kooza_18.jpg",
+alt:"Finale performance from Cirque du Soleil KOOZA."
+}
 
 ];
 
@@ -303,12 +374,12 @@ return array;
 
 const randomizedImages = shuffle([...images]);
 
-randomizedImages.forEach(src => {
+randomizedImages.forEach(image => {
 
 const img = document.createElement('img');
 
-img.src = src;
-img.alt = '';
+img.src = image.src;
+img.alt = image.alt;
 img.draggable = false;
 
 gallery.appendChild(img);

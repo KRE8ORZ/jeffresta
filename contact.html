@@ -70,81 +70,96 @@ nav a:hover{
     margin:0 4px;
 }
 
-.contact-wrapper{
+.contact-text{
     max-width:640px;
-    margin:60px auto 80px;
+    margin:60px auto 40px;
+    font-size:1rem;
+    line-height:1.7;
+    color:#333;
 }
 
-.contact-wrapper h2{
-    font-size:1.1rem;
+.contact-text h2{
+    font-size:1rem;
     font-weight:300;
+    color:#444;
     margin:0 0 20px 0;
     text-align:center;
+}
+
+.contact-text p{
+    margin:0;
+}
+
+.form-wrapper{
+    max-width:640px;
+    margin:0 auto 60px;
+}
+
+.form-group{
+    margin-bottom:20px;
+}
+
+.form-group label{
+    display:block;
+    margin-bottom:8px;
     color:#444;
-}
-
-.contact-wrapper p{
-    color:#333;
-    line-height:1.7;
-    margin:0 0 25px 0;
-}
-
-.contact-form{
-    display:flex;
-    flex-direction:column;
-    gap:16px;
-}
-
-.contact-form label{
     font-size:.9rem;
-    color:#444;
 }
 
-.contact-form input,
-.contact-form textarea{
+.form-group input,
+.form-group textarea{
     width:100%;
     box-sizing:border-box;
-    border:1px solid #d0d0d0;
     padding:12px;
-    font-size:.95rem;
-    font-family:inherit;
+    border:1px solid #d6d6d6;
     background:#fff;
     color:#111;
+    font-size:.95rem;
+    font-family:inherit;
 }
 
-.contact-form input:focus,
-.contact-form textarea:focus{
-    outline:none;
-    border-color:#777;
-}
-
-.contact-form textarea{
+.form-group textarea{
     min-height:180px;
     resize:vertical;
 }
 
-.contact-form button{
-    width:140px;
-    padding:12px 20px;
-    border:1px solid #333;
+.form-group input:focus,
+.form-group textarea:focus{
+    outline:none;
+    border-color:#777;
+}
+
+.submit-button{
     background:#fff;
     color:#111;
+    border:1px solid #333;
+    padding:12px 22px;
     cursor:pointer;
     font-size:.9rem;
     font-family:inherit;
 }
 
-.contact-form button:hover{
+.submit-button:hover{
     background:#111;
     color:#fff;
 }
 
 .alternate-contact{
-    margin-top:35px;
+    max-width:640px;
+    margin:0 auto 60px;
     text-align:center;
     color:#555;
     font-size:.9rem;
     line-height:1.6;
+}
+
+.alternate-contact a{
+    color:#333;
+    text-decoration:none;
+}
+
+.alternate-contact a:hover{
+    text-decoration:underline;
 }
 
 .bottom-text{
@@ -192,8 +207,13 @@ nav a{
     padding:8px 10px 20px;
 }
 
-.contact-wrapper{
-    margin:25px auto 40px;
+.contact-text{
+    margin:25px auto 30px;
+    font-size:.95rem;
+}
+
+.form-wrapper{
+    margin-bottom:40px;
 }
 
 }
@@ -213,4 +233,101 @@ nav a{
 <a href="/">Home</a>
 <span class="separator" aria-hidden="true">•</span>
 
-<a href="concert.html">Concert Photography
+<a href="concert.html">Concert Photography</a>
+<span class="separator" aria-hidden="true">•</span>
+
+<a href="ballet.html">Ballet Photography</a>
+<span class="separator" aria-hidden="true">•</span>
+
+<a href="performing-arts.html">Performing Arts Photography</a>
+<span class="separator" aria-hidden="true">•</span>
+
+<a href="ballet-art.html">Ballet Art</a>
+<span class="separator" aria-hidden="true">•</span>
+
+<a href="about.html">About</a>
+
+</nav>
+
+</header>
+
+<div class="contact-text">
+
+<h2>Contact</h2>
+
+<p>
+For licensing, publication requests, collaboration opportunities, print inquiries, or other photography-related questions, please use the form below.
+</p>
+
+</div>
+
+<div class="form-wrapper">
+
+<form action="https://formspree.io/f/xwlownpr" method="POST">
+
+<div class="form-group">
+<label for="name">Name</label>
+<input
+type="text"
+id="name"
+name="name"
+required>
+</div>
+
+<div class="form-group">
+<label for="email">Email</label>
+<input
+type="email"
+id="email"
+name="email"
+required>
+</div>
+
+<div class="form-group">
+<label for="message">Message</label>
+<textarea
+id="message"
+name="message"
+required></textarea>
+</div>
+
+<button class="submit-button" type="submit">
+Send Message
+</button>
+
+</form>
+
+</div>
+
+<div class="alternate-contact">
+
+<p>
+Alternate contact:
+</p>
+
+<p>
+<a href="mailto:jeff@jeffresta.com">jeff@jeffresta.com</a>
+</p>
+
+</div>
+
+<div class="bottom-text">
+
+<h2>
+Concert, Ballet &amp; Performing Arts Photography
+</h2>
+
+<p>
+Promoting Music &amp; The Performing Arts through Photography &amp; Media.
+</p>
+
+</div>
+
+<div class="footer">
+© 2027 Jeff Resta Photography
+</div>
+
+</main>
+
+</body>
+</html>

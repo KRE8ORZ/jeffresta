@@ -7,6 +7,9 @@
     <loc>https://www.jeffresta.com/about.html</loc>
   </url>
   <url>
+    <loc>https://www.jeffresta.com/contact.html</loc>
+  </url>
+  <url>
     <loc>https://www.jeffresta.com/concert.html</loc>
   </url>
   <url>
@@ -17,5 +20,8 @@
   </url>
   <url>
     <loc>https://www.jeffresta.com/ballet-art.html</loc>
+  </url>
+  <url>
+    <loc>https://www.jeffresta.com/artist-index.html</loc>
   </url>
 </urlset>
